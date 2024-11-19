@@ -28,7 +28,7 @@ async function obtenerAprendizPorId(id) {
         throw error;
     }
 }
- obtenerAprendices().then(console.log).catch(console.error); // Prueba de la función
+//  obtenerAprendices().then(console.log).catch(console.error); // Prueba de la función
 
 // Exporta las funciones para que puedan ser usadas en index.js
 export { obtenerAprendices, obtenerAprendizPorId };

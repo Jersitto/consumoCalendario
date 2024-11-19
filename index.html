@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,9 @@
             <i class="fa fa-users" aria-hidden="true"></i>
         </button>
         <div class="menu">
-           
+
             <div class="menu-item" data-section="html">
-              <i class="fa fa-users" aria-hidden="true"></i>
+                <i class="fa fa-users" aria-hidden="true"></i>
                 <span>Aprendiz</span>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
@@ -24,32 +25,32 @@
                     <i class="fa fa-book" aria-hidden="true"></i>
                     <span>ingresar nuevo Aprendiz</span>
                 </div>
-                
-                <div class="submenu-item" data-section="Etiquetas-HTML">
-                  <i class="fa fa-book" aria-hidden="true"></i>
-                  <span>aprendices ingresados</span>
-              </div>
 
-              <div class="submenu-item" data-section="Documentacion-HTML">
-                <i class="fa fa-book" aria-hidden="true"></i>
-                <span>Buscar Aprendiz por ID</span>
-            </div>
+                <div class="submenu-item" data-section="mostrarAprendices">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>aprendices ingresados</span>
+                </div>
 
-            <div class="submenu-item" data-section="actualizar-aprendiz">
-              <i class="fa fa-book" aria-hidden="true"></i>
-              <span>Actualizar datos de Aprendiz</span>
-          </div>
-                
+                <div class="submenu-item" data-section="aprendiz_Id">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>Buscar Aprendiz por ID</span>
+                </div>
+
+                <div class="submenu-item" data-section="actualizar-aprendiz">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>Actualizar datos de Aprendiz</span>
+                </div>
+
 
             </div>
 
             <div class="menu-item" data-section="condicionales">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
                 <span>Eventos</span>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
 
-             <div class="submenu">
+            <div class="submenu">
                 <div class="submenu-item" data-section="condicionales-sencillos">
                     <i class="fa fa-book" aria-hidden="true"></i>
                     <span>Documentacion</span>
@@ -61,117 +62,105 @@
                 </div>
             </div>
 
-             <div class="menu-item" data-section="JavaScript">
-                  <span>JavaScript</span>
-                  <i class="fas fa-chevron-down arrow"></i>
+            <div class="menu-item" data-section="JavaScript">
+                <span>JavaScript</span>
+                <i class="fas fa-chevron-down arrow"></i>
             </div>
 
-             <div class="submenu">
-                   <div class="submenu-item" data-section="Documentacion-js">
-                       <span>Documentacion</span>
-                       
-                   </div>
+            <div class="submenu">
+                <div class="submenu-item" data-section="Documentacion-js">
+                    <span>Documentacion</span>
 
-              </div>
-            
+                </div>
+
+            </div>
+
         </div>
     </div>
-<div class="content">
-    <h1>Consumo de API de calendario</h1>
+    <div class="content">
+        <h1>Consumo de API de calendario</h1>
         <div class="content-section" id="Documentacion-HTML">
             <h2>Ingresar nuevo Aprendiz</h2>
-           <!-- Formulario para crear aprendiz -->
-    
-    <form method="POST">
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" name="nombre" required><br>
+            <!-- Formulario para crear aprendiz -->
 
-        <label for="documento">Documento:</label><br>
-        <input type="text" name="documento" required><br>
+            <form method="POST">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" name="nombre" required><br>
 
-        <label for="programa">Programa:</label><br>
-        <input type="text" name="programa"><br>
-        
-        <label for="centro">Centro:</label><br>
-        <input type="text" name="centro"><br>
-        
-        <label for="regional">Regional:</label><br>
-        <input type="text" name="regional"><br>
-        
-        <label for="rh">RH:</label><br>
-        <select name="rh" required>
-            <option value="">Seleccione un tipo de RH</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-        </select><br>
-    </form>
+                <label for="documento">Documento:</label><br>
+                <input type="text" name="documento" required><br>
 
-        <input type="submit" name="crear" value="Crear Aprendiz">
+                <label for="programa">Programa:</label><br>
+                <input type="text" name="programa"><br>
+
+                <label for="centro">Centro:</label><br>
+                <input type="text" name="centro"><br>
+
+                <label for="regional">Regional:</label><br>
+                <input type="text" name="regional"><br>
+
+                <label for="rh">RH:</label><br>
+                <select name="rh" required>
+                    <option value="">Seleccione un tipo de RH</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select><br>
+            </form>
+
+            <input type="submit" name="crear" value="Crear Aprendiz">
         </div>
 
-        
-        <div class="content-section" id="Etiquetas-HTML">
+        <!--Obtener aprendiz por id--> 
+
+        <div class="content-section" id="aprendiz_Id">
+            <form id="buscarForm">
+                <input type="text" id="aprendizId" placeholder="ID del aprendiz" required>
+                <button type="submit">Buscar</button>
+            </form>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Documento</th>
+                    <th>Programa</th>
+                    <th>Centro</th>
+                    <th>Regional</th>
+                    <th>RH</th>
+                </tr>
+                <tbody id="tableBody">
+        </div>
+
+        <div class="content-section" id="mostrarAprendices">
             <h2>LISTA DE APRENDICES</h2>
             <!-- Listado de aprendices -->
-    
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Documento</th>
-            <th>Programa</th>
-            <th>Centro</th>
-            <th>Regional</th>
-            <th>RH</th>
-        </tr>   
-    </table>
-</div>
+
+            <button id="listar">Listar Aprendices</button>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Documento</th>
+                    <th>Programa</th>
+                    <th>Centro</th>
+                    <th>Regional</th>
+                    <th>RH</th>
+                </tr>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
 
         <!--------------------------->
-        <div class="content-section" id="actualizar-aprendiz">
-            <!-- Formulario para actualizar aprendiz -->
-    <h2>Actualizar Aprendiz</h2>
-    <form method="POST">
-        <label for="id">ID del Aprendiz:</label><br>
-        <input type="number" name="id" required><br>
-
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" name="nombre" required><br>
-
-        <label for="documento">Documento:</label><br>
-        <input type="text" name="documento"><br>
         
-        <label for="programa">Programa:</label><br>
-        <input type="text" name="programa"><br>
         
-        <label for="centro">Centro:</label><br>
-        <input type="text" name="centro"><br>
         
-        <label for="regional">Regional:</label><br>
-        <input type="text" name="regional"><br>
-        
-        <label for="rh">RH:</label><br>
-        <select name="rh" required>
-            <option value="">Seleccione un tipo de RH</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-        </select><br>
-
-        <input type="submit" name="actualizar" value="Actualizar Aprendiz">
-    </form>
-        </div>
 
         <!--------------------------->
         <div class="content-section" id="condicionales-anidados">
@@ -183,19 +172,22 @@
             <p>Contenido sobre condicionales anidados...</p>
         </div>
         <div class="content-section" id="etiqueta-body">
-            <h2>etiqueta <"body"> </h2><br><br>
+            <h2>etiqueta <"body">
+            </h2><br><br>
             <p>Contenido sobre condicionales anidados...</p>
         </div>
 
-        
+
     </div>
 
-<script src="js/dashboard.js"></script>
-<script src="js/utils/aprendiz.js"></script>
-<script src="js/index.js"></script>
+    
 
 </head>
+
 <body>
-    
+    <script src="js/dashboard.js"></script>
+    <script type="module" src="js/utils/aprendiz.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
+
 </html>
