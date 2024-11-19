@@ -11,7 +11,7 @@
     margin-top: 1%;
     margin-left: 40%;
     height: auto;
-  color: #ff0990;
+  color: #09ff5b;
   text-shadow: #000000;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  }
@@ -20,15 +20,7 @@
     color: rgb(7, 7, 6);
  }
 
- .etiqueta{
-    color: #228dd4;
-    font-family: 'Courier New', Courier, monospace;
- }
-
-.etiqueta:hover{
-    color:#ff0990;
-
-}
+ 
 
 body {
     display: flex;
@@ -37,7 +29,7 @@ body {
 }
  
 .sidebar {
-    background: #00060c;
+    background: #09ff5b;
     width: 260px;
     transition: width 0.1s;
     position: relative;
@@ -52,9 +44,9 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #ff0990;
+    background: #fdfdfd;
     border: none;
-    color: rgb(0, 204, 255);
+    color: #060706;
     padding: 8px;
     cursor: pointer;
     border-radius: 4px;
@@ -73,12 +65,12 @@ body {
  
 .menu-item {
     padding: 12px 20px;
-    color: #ff0990;
+    color: #000000;
     cursor: pointer;
     display: flex;
     align-items: center;
     transition: 0.3s;
-    
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
   
@@ -109,19 +101,19 @@ body {
  
 .submenu-item {
     padding: 10px;
-    color: #228dd4;
+    color: #ffffff;
     cursor: pointer;
     transition: 0.3s;
 }
  
 .submenu-item:hover {
-    color: rgb(128, 15, 77);
+    color: rgb(0, 0, 0);
 }
  
 .content {
     flex: 1;
     padding: 20px;
-    background: #3ad2f8;
+    background: #ffffff;
 }
  
 .content-section {

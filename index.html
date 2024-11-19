@@ -5,54 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Documentacion del Curso</title>
+    <title>Consumo de Calendario</title>
 
     <div class="sidebar">
         <button class="toggle-btn">
-            <i class="fas fa-bars"></i>
+            <i class="fa fa-users" aria-hidden="true"></i>
         </button>
         <div class="menu">
            
             <div class="menu-item" data-section="html">
-                <i class="fa fa-code" aria-hidden="true"></i>
-                <span>HTML</span>
+              <i class="fa fa-users" aria-hidden="true"></i>
+                <span>Aprendiz</span>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
 
             <div class="submenu">
                 <div class="submenu-item" data-section="Documentacion-HTML">
                     <i class="fa fa-book" aria-hidden="true"></i>
-                    <span>Documentacion</span>
+                    <span>ingresar nuevo Aprendiz</span>
                 </div>
                 
-                
-                <!--nombramos la clase como menu-item para que nos permita realizar 
-                un sub menu dentro del primer sub menu -->
-                <div class="menu-item" data-section="Etiquetas-HTML">
-                    <i class="fa fa-hashtag" aria-hidden="true"></i>
-                    <span class="etiqueta">Etiquetas</span>
-                    <i class="fas fa-chevron-down arrow"></i>
-                   </div>
-                   
-              
-                
-            
-            <div class="submenu"><!--abro otro div de la clase submenu dentro de la clase
-                                  submenu principal para poder realizar el submenu dentro del submenu -->
-                
-                <div class="submenu-item" data-section="etiqueta-html">
-                    <span >html</span>
-                   </div>
+                <div class="submenu-item" data-section="Etiquetas-HTML">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <span>aprendices ingresados</span>
+              </div>
 
-             <div class="submenu-item" data-section="etiqueta-body">
-                    <span >Body</span>
-                   </div>
-                </div>
+              <div class="submenu-item" data-section="Documentacion-HTML">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <span>Buscar Aprendiz por ID</span>
+            </div>
+
+            <div class="submenu-item" data-section="actualizar-aprendiz">
+              <i class="fa fa-book" aria-hidden="true"></i>
+              <span>Actualizar datos de Aprendiz</span>
+          </div>
+                
+
             </div>
 
             <div class="menu-item" data-section="condicionales">
-                <i class="fa fa-hashtag" aria-hidden="true"></i>
-                <span>CSS</span>
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span>Eventos</span>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
 
@@ -84,19 +77,103 @@
         </div>
     </div>
 <div class="content">
-    <h1>Documentacion del Curso</h1>
+    <h1>Consumo de API de calendario</h1>
         <div class="content-section" id="Documentacion-HTML">
-            <h2>Documentacion HTMl</h2>
-            <p>Contenido sobre algoritmos sencillos...</p>
+            <h2>Ingresar nuevo Aprendiz</h2>
+           <!-- Formulario para crear aprendiz -->
+    
+    <form method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" name="nombre" required><br>
+
+        <label for="documento">Documento:</label><br>
+        <input type="text" name="documento" required><br>
+
+        <label for="programa">Programa:</label><br>
+        <input type="text" name="programa"><br>
+        
+        <label for="centro">Centro:</label><br>
+        <input type="text" name="centro"><br>
+        
+        <label for="regional">Regional:</label><br>
+        <input type="text" name="regional"><br>
+        
+        <label for="rh">RH:</label><br>
+        <select name="rh" required>
+            <option value="">Seleccione un tipo de RH</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select><br>
+    </form>
+
+        <input type="submit" name="crear" value="Crear Aprendiz">
         </div>
+
+        
         <div class="content-section" id="Etiquetas-HTML">
-            <h2>Etiquetas HTML</h2>
-            <p>Contenido sobre algoritmos complejos...</p>
+            <h2>LISTA DE APRENDICES</h2>
+            <!-- Listado de aprendices -->
+    
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Documento</th>
+            <th>Programa</th>
+            <th>Centro</th>
+            <th>Regional</th>
+            <th>RH</th>
+        </tr>   
+    </table>
+</div>
+
+        <!--------------------------->
+        <div class="content-section" id="actualizar-aprendiz">
+            <!-- Formulario para actualizar aprendiz -->
+    <h2>Actualizar Aprendiz</h2>
+    <form method="POST">
+        <label for="id">ID del Aprendiz:</label><br>
+        <input type="number" name="id" required><br>
+
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" name="nombre" required><br>
+
+        <label for="documento">Documento:</label><br>
+        <input type="text" name="documento"><br>
+        
+        <label for="programa">Programa:</label><br>
+        <input type="text" name="programa"><br>
+        
+        <label for="centro">Centro:</label><br>
+        <input type="text" name="centro"><br>
+        
+        <label for="regional">Regional:</label><br>
+        <input type="text" name="regional"><br>
+        
+        <label for="rh">RH:</label><br>
+        <select name="rh" required>
+            <option value="">Seleccione un tipo de RH</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select><br>
+
+        <input type="submit" name="actualizar" value="Actualizar Aprendiz">
+    </form>
         </div>
-        <div class="content-section" id="condicionales-sencillos">
-            <h2>Documentacion CSS</h2>
-            <p>Contenido sobre condicionales sencillos...</p>
-        </div>
+
+        <!--------------------------->
         <div class="content-section" id="condicionales-anidados">
             <h2>Condicionales Anidados</h2>
             <p>Contenido sobre condicionales anidados...</p>
@@ -110,35 +187,12 @@
             <p>Contenido sobre condicionales anidados...</p>
         </div>
 
-        <!--documentacion etiqueta <html>-->
-        <div class="content-section" id="etiqueta-html">
-            <h2>etiqueta <"html"> </h2><br><br>
-            <p>Tipo de etiqueta: Etiqueta contenedora (tiene contenido) <br><br>
-                Propósito: Definir el documento HTML y contener todas las demás etiquetas.<br><br>
-                Atributos:<br>
-                - lang: especifica el idioma del documento<br><br>
-                - xmlns: especifica el namespace XML (opcional)<br><br></p>
-                
-                <p >Estructura:<br><br>
-                    html<br><br>
-                
-                    /html<br><br>
-                
-                    Importancia:<br><br>
-                    1. Define el documento HTML<br>
-                    2. Contiene las etiquetas head y body<br>
-                    3. Es el elemento principal del documento<br><br>
-                    Consecuencias de no utilizarla:<br><br>
-                    1. El documento no es válido<br>
-                    2. Los navegadores pueden tener problemas para renderizar el contenido<br>
-                    3. La estructura del documento no es clara</p>
-                 <p >Recomendación:<br><br>
-                    - Utilizar siempre la etiqueta html como etiqueta raíz<br>
-                    - Especificar el idioma con el atributo lang<br>
-                    - No omitir la etiqueta html en documentos HTML</p>
-        </div>
+        
     </div>
-<script src="js/app.js"></script>
+
+<script src="js/dashboard.js"></script>
+<script src="js/utils/aprendiz.js"></script>
+<script src="js/index.js"></script>
 
 </head>
 <body>
