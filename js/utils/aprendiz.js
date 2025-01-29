@@ -28,7 +28,35 @@ async function obtenerAprendizPorId(id) {
         throw error;
     }
 }
+
+async function actualizarAprendiz(id, nombre, documento, programa, centro, regional, rh) {
+    try {
+        const response = await fetch(`${url}?accion=actualizar`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id,
+                nombre,
+                documento,
+                programa,
+                centro,
+                regional,
+                rh
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error("Ocurrió un error al actualizar el aprendiz");
+        }
+        return await response.json(); // Devuelve los datos
+    } catch (error) {
+        console.error("Error:", error);
+        throw error;
+    }
+}
 //  obtenerAprendices().then(console.log).catch(console.error); // Prueba de la función
 
 // Exporta las funciones para que puedan ser usadas en index.js
-export { obtenerAprendices, obtenerAprendizPorId };
+export { obtenerAprendices, obtenerAprendizPorId, actualizarAprendiz };

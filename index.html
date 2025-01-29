@@ -116,12 +116,29 @@
             <input type="submit" name="crear" value="Crear Aprendiz">
         </div>
 
-        <!--Obtener aprendiz por id--> 
+        <!--Obtener aprendiz por id-->
 
         <div class="content-section" id="aprendiz_Id">
             <form id="buscarForm">
+                <h2>Buscar por ID</h2>
                 <input type="text" id="aprendizId" placeholder="ID del aprendiz" required>
                 <button type="submit">Buscar</button>
+                <div class="content-section" id="busquedaAprendiz">
+                    <h2>APRENDIZ ENCONTRADO</h2>
+                    <table border="1">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Programa</th>
+                            <th>Centro</th>
+                            <th>Regional</th>
+                            <th>RH</th>
+                        </tr>
+                        <tbody id="tableBodyBusqueda"></tbody>
+                    </table>
+        
+                </div>
             </form>
         </div>
 
@@ -146,10 +163,36 @@
             </table>
         </div>
 
-        <!--------------------------->
         
-        
-        
+
+        <!---------Actualizar aprendiz------------------>
+        <div class="content-section" id="actualizar-aprendiz">
+            <h2>Actualizar datos de Aprendiz</h2>
+            <form id="actualizarForm">
+                <input type="text" id="id" placeholder="ID del aprendiz" required>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="text" id="documento" placeholder="Documento" required>
+                <input type="text" id="programa" placeholder="Programa" required>
+                <input type="text" id="centro" placeholder="Centro" required>
+                <input type="text" id="regional" placeholder="Regional" required>
+                <select id="rhAprendiz" required>
+                    <option value="">Seleccione un tipo de RH</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+                <button type="submit">Actualizar</button>
+            </form>
+
+        </div>
+
+
+
 
         <!--------------------------->
         <div class="content-section" id="condicionales-anidados">
@@ -169,7 +212,7 @@
 
     </div>
 
-    
+
 
 </head>
 
