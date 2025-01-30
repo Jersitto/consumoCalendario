@@ -163,7 +163,7 @@ document.getElementById('buscarForm').addEventListener('submit', async (event) =
     }
 });
 
-
+// Evento para listar todos los aprendices
 document.getElementById('listar').addEventListener('click', async () => {
     try {
         const aprendicesData = await obtenerAprendices(); // Llama a la función desde aprendiz.js
