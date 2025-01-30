@@ -31,31 +31,41 @@ async function obtenerAprendizPorId(id) {
 
 async function actualizarAprendiz(id, nombre, documento, programa, centro, regional, rh) {
     try {
+        const datos = {
+            id: Number(id),  // Asegurar que el ID es un número
+            nombre,
+            documento,
+            programa,
+            centro,
+            regional,
+            rh
+        };
+
+        console.log("Enviando datos a la API:", datos);
+
         const response = await fetch(`${url}?accion=actualizar`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                id,
-                nombre,
-                documento,
-                programa,
-                centro,
-                regional,
-                rh
-            })
+            body: JSON.stringify(datos)
         });
-        
+
+        const responseText = await response.text(); // Captura la respuesta cruda de la API
+        console.log("Respuesta cruda de la API:", responseText);
+
         if (!response.ok) {
-            throw new Error("Ocurrió un error al actualizar el aprendiz");
+            throw new Error(`Error en la API: ${responseText}`);
         }
-        return await response.json(); // Devuelve los datos
+
+        return JSON.parse(responseText); // Convertir a JSON
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Error en la solicitud fetch:", error);
         throw error;
     }
 }
+
+
 //  obtenerAprendices().then(console.log).catch(console.error); // Prueba de la función
 
 // Exporta las funciones para que puedan ser usadas en index.js

@@ -107,25 +107,43 @@ function actualizarAprendizForm(data) {
 document.getElementById('actualizarForm').addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    const id = document.getElementById('id').value.trim();
+    if (!id) {
+        alert("El ID del aprendiz es obligatorio.");
+        return;
+    }
+
     const formData = {
-        id: document.getElementById('id').value,
-        nombre: document.getElementById('nombre').value,
-        documento: document.getElementById('documento').value,
-        programa: document.getElementById('programa').value,
-        centro: document.getElementById('centro').value,
-        regional: document.getElementById('regional').value,
+        id,
+        nombre: document.getElementById('nombre').value.trim(),
+        documento: document.getElementById('documento').value.trim(),
+        programa: document.getElementById('programa').value.trim(),
+        centro: document.getElementById('centro').value.trim(),
+        regional: document.getElementById('regional').value.trim(),
         rh: document.getElementById('rh').value
     };
 
     try {
-        const resultado = await actualizarAprendiz(formData);
-        actualizarAprendizForm(resultado);
+        const resultado = await actualizarAprendiz(
+            formData.id,
+            formData.nombre,
+            formData.documento,
+            formData.programa,
+            formData.centro,
+            formData.regional,
+            formData.rh
+        );
+
+        actualizarAprendizForm(resultado); // Llenar el formulario con los nuevos datos
+
         alert('Aprendiz actualizado exitosamente');
         location.reload();
     } catch (error) {
         alert('Error al actualizar el aprendiz');
     }
 });
+
+
 
 
 
